@@ -1,5 +1,6 @@
-import org.junit.Test;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class CreditCalculatorTest {
     private final int loanAmount = 700_000;
@@ -10,21 +11,21 @@ public class CreditCalculatorTest {
 
     @Test
     void testAmountPerMonth() {
-        int expected = 50_000;
+        int expected = 65_853;
         int actual = calculator.amountPerMonth(loanAmount, loanRate, loanTerm);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void testFullAmountReturn() {
-        int expected = 800_000;
-        int actual = calculator.fullAmountReturn(loanAmount, loanTerm, loanRate);
+        int expected = 790_241;
+        int actual = calculator.fullAmountReturn(loanAmount,loanRate, loanTerm);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void testOverPayAmount() {
-        int expected = 100_000;
+        int expected = 90_241;
         int actual = calculator.overPayAmount(loanAmount, loanRate, loanTerm);
         Assertions.assertEquals(expected, actual);
     }
